@@ -58,20 +58,27 @@
                   //previousElementSibling
      //console.log(itemList.previousElementSibling);
         //createElement
-  var newDiv=document.createElement('div');
-  newDiv.className='hello';
-  newDiv.id='hello1';
-  newDiv.setAttribute('title','hello Div');
+ // var newDiv=document.createElement('div');
+ // newDiv.className='hello';
+ // newDiv.id='hello1';
+ // newDiv.setAttribute('title','hello Div');
       //createTextNode
-  var newDivText=document.createTextNode('hello world');
+ // var newDivText=document.createTextNode('hello world');
 
-  newDiv.appendChild(newDivText);
-  var container=document.querySelector('.container');
-  var h1=document.querySelector(' h1');
-  console.log(newDiv);
-  newDiv.style.fontSize='30px';
-  container.insertBefore(newDiv, h1);
+ // newDiv.appendChild(newDivText);
+ // var container=document.querySelector('.container');
+  //var h1=document.querySelector(' h1');
   //console.log(newDiv);
+ // newDiv.style.fontSize='30px';
+ // container.insertBefore(newDiv, h1);
+     
+ var newItem=document.createElement('li');
+  newItem.className="list-group-item";
+  var itemText=document.createTextNode('hello');
+  newItem.appendChild(itemText);
+  var containe=document.querySelector('#items');
+  var li=document.querySelector('ul.firstElementChild');
+  containe.insertBefore(newItem,li);
   </script>
 
 </body>
