@@ -50,10 +50,14 @@
         function addItem(e){
             e.preventDefault();
             var newItem=document.getElementById('item').value;
+            //i add the discribsion box through script so i save it through a variable box.
+            var discribe=box.value;
             //create new li element
             var li=document.createElement('li');
             li.className='list-group-item';
             li.appendChild(document.createTextNode(newItem));
+            ///added discribsion box content to li
+            li.appendChild(document.createTextNode(' '+discribe));
             var deletebtn=document.createElement('button');
             deletebtn.className='btn btn-danger btn-sm float-right delete';
             deletebtn.appendChild(document.createTextNode('X'));
@@ -81,7 +85,9 @@ function filterItems(e){
   var items = itemList.getElementsByTagName('li');
   // Convert to an array
   Array.from(items).forEach(function(item){
-    var itemName = item.firstChild.textContent;
+   // var itemName = item.firstChild.textContent;
+    var itemName = item.textContent;//now i have to also filter the discribsion box element
+
     if(itemName.toLowerCase().indexOf(text) != -1){
       item.style.display = 'block';
     } else {
@@ -89,6 +95,19 @@ function filterItems(e){
     }
   });
 }
+
+/////making a a discription
+   var parent=document.getElementById('addForm');
+  var box=document.createElement('input');
+   box.setAttribute('type','text');
+   box.className='form-control mr-2';
+   box.id='discription';
+   parent.appendChild(box);
+
+
+
+
+
       </script>
 </body>
 </html>
