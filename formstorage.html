@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form action="#.php" class="form">
+    <div class="input-group flex-nowrap">
+        <span class="input-group-text" id="addon-wrapping">Name:  </span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" id="s1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+      </div>
+      <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+    <script>
+          var name=document.querySelector('#s1').value;
+          var email=document.querySelector('#exampleFormControlInput1').value;
+        var submitbtn=document.querySelector('.btn btn-primary');
+        submitbtn.addEventListener('click',storage);
+        function storage(e){
+            e.localStorage.setItem('name',name);
+            e.localStorage.setItem('email',email);
+
+
+        }
+    </script>
+</body>
+</html>
