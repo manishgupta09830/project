@@ -7,27 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-  <form action="#.php" class="form">
-    <div class="input-group flex-nowrap">
-        <span class="input-group-text" id="addon-wrapping">Name:  </span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" id="s1">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-      </div>
-      <input class="btn btn-primary" type="submit" value="Submit">
-    </form>
+  <form onsubmit="storage(event)">
+    <label >name</label>
+    <input type="text" name="username" required><br>
+    <label >emailId</label>
+    <input type="email" name="emailId" required><br>
+    <label >phoneNo.</label>
+    <input type="tel" name="phoneno" required><br>
+    <button >submit</button>
+  </form>
     <script>
-          var name=document.querySelector('#s1').value;
-          var email=document.querySelector('#exampleFormControlInput1').value;
-        var submitbtn=document.querySelector('.btn btn-primary');
-        submitbtn.addEventListener('click',storage);
-        function storage(e){
-            e.localStorage.setItem('name',name);
-            e.localStorage.setItem('email',email);
-
-
+        function storage(event){
+        event.preventDefault();
+        const name=event.target.username.value;
+        const email=event.target.emailId.value;
+        const number=event.target.phoneno.value;
+        localStorage.setItem('name',name);
+        localStorage.setItem('emailId',email);
+        localStorage.setItem('PhoneNo',number);
         }
     </script>
 </body>
