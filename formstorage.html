@@ -15,6 +15,9 @@
     <label >phoneNo.</label>
     <input type="tel" name="phoneno" required><br>
     <button >submit</button>
+    <ul class="p1">
+      
+    </ul>
   </form>
     <script>
         function storage(event){
@@ -22,9 +25,9 @@
         const name=event.target.username.value;
         const email=event.target.emailId.value;
         const number=event.target.phoneno.value;
-        localStorage.setItem('name',name);
-        localStorage.setItem('emailId',email);
-        localStorage.setItem('PhoneNo',number);
+        //localStorage.setItem('name',name);
+       // localStorage.setItem('emailId',email);
+        //localStorage.setItem('PhoneNo',number);
         let obj={
           name:name,
           email:email,
@@ -33,9 +36,22 @@
         
         
        // let obj_serialized=JSON.stringify(obj);
-        localStorage.setItem('username',JSON.stringify(obj));
-
+        localStorage.setItem(obj.email,JSON.stringify(obj));
+        localStorage.getItem(obj.email);
+        
+       // console.log(obj_deserialized);
+         let list=document.querySelector('.p1');
+       
+        li=document.createElement('li');
+        JSON.parse(localStorage.getItem(obj.email));
+        let value= (obj.name+' '+obj.email+' '+obj.number); 
+        li.appendChild(document.createTextNode(value));
+        list.appendChild(li);
+        console.log(list);
         }
+
+
+
     </script>
 
 </body>
