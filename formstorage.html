@@ -25,7 +25,18 @@
         localStorage.setItem('name',name);
         localStorage.setItem('emailId',email);
         localStorage.setItem('PhoneNo',number);
+        let obj={
+          name:name,
+          email:email,
+          number:number
+        };
+        
+        
+       // let obj_serialized=JSON.stringify(obj);
+        localStorage.setItem('username',JSON.stringify(obj));
+
         }
     </script>
+
 </body>
 </html>
