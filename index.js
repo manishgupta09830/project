@@ -13,5 +13,9 @@ let teacher={
 function getEmail(firstName,lastName){
   return `${this.firstName}${this.lastName}@gmail.com`
 }
-console.log(getEmail.call(teacher));
-console.log(getEmail.call(student));
+function chooseSubject(sub1,sub2){
+  console.log(sub1,sub2);
+  
+}
+console.log(chooseSubject.apply(teacher,["maths"]));
+console.log(chooseSubject.call(student,["maths","arts"]));
