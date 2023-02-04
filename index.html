@@ -1,55 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  <title>Item Lister</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-  <header id="main-header" class="bg-success text-white p-4 mb-3">
-    <div class="container">
-      <h1 id="header-title">Item Lister <span style="display:none">123</span></h1>
-    </div>
-  </header>
-  <div class="container">
-   <div id="main" class="card card-body">
-    <h2 class="title">Add Items</h2>
-    <form class="form-inline mb-3">
-      <input type="text" class="form-control mr-2">
-      <input type="submit" class="btn btn-dark" value="Submit">
-    </form>
-    <h2 class="title">Items</h2>
-    <ul id="items" class="list-group">
-      <li class="list-group-item">Item 1</li>
-      <li class="list-group-item">Item 2</li>
-      <li class="list-group-item">Item 3</li>
-      <li class="list-group-item">Item 4</li>
-    </ul>
-   </div>
-  </div>
-  <script>
-    console.log(document.title="123");
-    console.log(document.body);
-    console.log(document.head);
-    console.log(document.all);
-    console.log(document.all[0]);
-    console.log(document.forms);
-    console.log(document.links);
-    console.log(document.getElementById('header-title'));
-    var header= document.getElementById("header-title");
-  
-    console.log(header.innerContent="Manish ki tech dukan");
-    console.log(header.innertext="Manishgupta ki tech dukan");
-  var st =document.getElementById("header-title");
-  st.style.border='2px dotted black';
-  st.style.padding='2px';
-  st.style.width='250px';
-  const it=document.getElementsByClassName('list-group-item');
-  
-  console.log(it.innerContent);;
-  </script>
+    <form onsubmit="SaveTolocalStorage(event)">
+        <label >Enter expence:</label>
+        <input type="number" id="ExpenceAmount" required >
+        <label>Choose Discription:</label>
+        <input type="text" id="Discription" required>
+        <label >Choose a category:</label>
+        <select id="Category" required>
+            <option value="fuel">fuel</option>
+            <option value="food">food</option>
+            <option value="movie">movie</option>
+            <option value="rent">rent</option>
+            <option value="loan pay"></option>
+        </select>
+        <button>add expence</button>
 
+    </form>
+    <ul id="TotalExpences"></ul>
+    <script src="et.js"></script>
+    
 </body>
 </html>
